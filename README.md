@@ -64,10 +64,43 @@ gets to an answer, not how the answer reads once it gets there.
 
 ## Install
 
-Drop the `footprint` directory into your agent's skills folder. It's picked
-up automatically on tasks that call for reduced tool usage or leaner
-context, or can be invoked directly by name.
+One-liner:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/somasundarv/footprint/main/install.sh | bash
+```
+
+Or manually:
+
+```sh
+git clone https://github.com/somasundarv/footprint.git ~/.claude/skills/footprint
+```
+
+Either way it lands in `~/.claude/skills/footprint` and is picked up
+automatically on tasks that call for reduced tool usage or leaner context,
+or can be invoked directly by name.
+
+By default the script targets `~/.claude/skills`; override with
+`SKILLS_DIR=/path/to/skills` if your agent uses a different location.
+Running it again later updates the existing install instead of duplicating
+it.
+
+### Install log
+
+Each install or update appends one line to a local, untracked
+`.install-log` file inside the skill folder: timestamp (UTC), action
+(install/update), version, and commit. This is local state, not part of
+the repo — check it to see when a given machine last installed or updated:
+
+```sh
+cat ~/.claude/skills/footprint/.install-log
+```
+
+## Versioning
+
+See [CHANGELOG.md](CHANGELOG.md) for release history and dates. Current
+version lives in `SKILL.md`'s frontmatter.
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
