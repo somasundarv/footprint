@@ -2,16 +2,12 @@
 name: footprint
 version: 1.0.0
 description: |
-  Reduce the number and size of tool calls (Read/Grep/Glob/Bash/Agent) needed
-  to complete a task, and cut redundant context re-derivation across turns.
-  Distinct from output-compression/verbosity skills: footprint does not
-  change how the response reads, it changes the orchestration path — fewer
-  round-trips, narrower reads, less re-verification, isolated exploration.
-  Complements verbosity/output-compression styles rather than overlapping
-  with them. Use when the user says "reduce tool calls", "minimize context
-  usage", "lean mode", "cut token usage", "optimize tool usage",
-  "/footprint", or when a task looks like it will require broad exploration
-  across many files.
+  Reduce the number and size of tool calls (Read/Grep/Glob/Bash/Agent) and cut
+  redundant context re-derivation. Changes the orchestration path, not the
+  response style: fewer round-trips, narrower reads, subagent isolation. Use
+  when the user says "reduce tool calls", "minimize context usage", "lean
+  mode", "cut token usage", "/footprint", or when a task needs broad
+  exploration across many files.
 allowed-tools:
   - Read
   - Grep
